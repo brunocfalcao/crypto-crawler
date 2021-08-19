@@ -56,12 +56,12 @@ class GetCoinPriceMapper
                     'last_updated' => $price->last_updated,
                 ]);
 
-                if (!isset($data->prices)) {
+                if (! isset($data->prices)) {
                     $data->prices = [];
                 }
 
                 array_push($data->prices, $model);
-            };
+            }
         }
 
         return $next($data);

@@ -25,7 +25,7 @@ class CreateCoinMapper
     {
         $response = (object) $data->response->json();
 
-        if (!$response->id) {
+        if (! $response->id) {
             throw new \Exception("Coin ID not found ({$data->coin})");
         }
 

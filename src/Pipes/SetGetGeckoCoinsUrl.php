@@ -13,7 +13,7 @@ use Closure;
  * Adds:
  * $data->url: The URL to be called on the next pipe.
  */
-class SetGetGeckoCoinsListUrl
+class SetGetGeckoCoinsUrl
 {
     public function __construct()
     {
@@ -22,12 +22,10 @@ class SetGetGeckoCoinsListUrl
 
     public function handle($data, Closure $next)
     {
-        $coins = urlencode($data->coins);
-
         data_set(
             $data,
             'url',
-            "https://api.coingecko.com/api/v3/coins/list?include_platform=false"
+            'https://api.coingecko.com/api/v3/coins/list?include_platform=false'
         );
 
         return $next($data);

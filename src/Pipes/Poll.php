@@ -35,6 +35,7 @@ class Poll
             } else {
                 throw new \Exception('Fetch error (unknown error message)');
             }
+
             return;
         }
 
