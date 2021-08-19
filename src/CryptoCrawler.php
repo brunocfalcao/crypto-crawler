@@ -37,7 +37,8 @@ class CryptoCrawlerService
         data_set($this->data, $path, $value);
         return $this;
     }
-        /**
+
+    /**
      * Sets the crawline pipeline that should be used to crawl data.
      *
      * @param  string $class Pipeline class
