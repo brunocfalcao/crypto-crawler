@@ -25,6 +25,19 @@ class CryptoCrawlerService
     }
 
     /**
+     * Sets a data path attribute in the $this->data attribute.
+     * Uses the data_set() helper, so you can make like
+     * $this->set('name.surname', 'Falcao');.
+     *
+     * @param string $path
+     * @param string $value
+     */
+    public function set(string $path, string $value)
+    {
+        data_set($this->data, $path, $value);
+        return $this;
+    }
+        /**
      * Sets the crawline pipeline that should be used to crawl data.
      *
      * @param  string $class Pipeline class
