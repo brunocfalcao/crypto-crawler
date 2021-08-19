@@ -35,6 +35,7 @@ class CryptoCrawlerService
     public function set(string $path, string $value)
     {
         data_set($this->data, $path, $value);
+
         return $this;
     }
 
@@ -56,7 +57,7 @@ class CryptoCrawlerService
     {
         app(\Illuminate\Pipeline\Pipeline::class)
             ->send($this->data())
-            ->through((new ($this->pipeline))())
+            ->through(new ($this->pipeline))
             ->thenReturn();
     }
 
