@@ -57,7 +57,7 @@ class CryptoCrawlerService
     {
         app(\Illuminate\Pipeline\Pipeline::class)
             ->send($this->data())
-            ->through(new ($this->pipeline))
+            ->through((new $this->pipeline())())
             ->thenReturn();
     }
 
