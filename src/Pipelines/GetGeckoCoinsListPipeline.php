@@ -9,14 +9,12 @@ use Nidavellir\CryptoCrawler\Pipes\SetGetCoinPriceUrl;
 /**
  * Gets all Gecko coins list using the API.
  */
-class GetCoinPricePipeline
+class GetGeckoCoinsListPipeline
 {
     public function __invoke()
     {
         return [
-            SetGetGeckoCoinsListUrl::class,
             Poll::class,
-            GetGeckoCoinsListMapper::class,
         ];
     }
 }
